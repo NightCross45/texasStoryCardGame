@@ -21,11 +21,14 @@ namespace AssemblyCSharp
 		int gameMode = 0; // 0 = player select, 1 = regular game, 2 = r&D TODO: this may change, prolly will to receive info from backend
 		GameObject lastObjectToHaveFocus;
 
+		frontEndManager frontEndManagerSCRIPT ;
+
 		void awake() {
 		}
 
 		void Start () {
 			resetCamPosition ();
+			frontEndManagerSCRIPT = GameObject.Find("frontEndManager").GetComponentInChildren<frontEndManager>();
 		}
 
 		// A courotine for animation the camera from stasrt to finish. "cameraIsBusy" keeps another anim from starting when set to 1.
@@ -109,6 +112,12 @@ namespace AssemblyCSharp
 										lastObjectToHaveFocus = null; // now set lastObjectToHaveFocus to 0;
 									}
 								}
+
+								// If we are set to 3, we test roll die again.... 
+								if(genericControllerScript.cameraFunction == 3){
+									frontEndManagerSCRIPT.diceControllerSCRIPT.rollDie();
+								}
+
 							}
 						}
 

@@ -8,6 +8,7 @@ namespace AssemblyCSharp
 		public MainBeController MainBeControllerSCRIPT;
 		public deckManager deckManagerSCRIPT ;
 		public cameraController cameraControllerSCRIPT ;
+		public diceController diceControllerSCRIPT ;
 
 		public int playerTurn; 
 
@@ -21,6 +22,7 @@ namespace AssemblyCSharp
 			deckManagerSCRIPT = GameObject.Find("deckManager").GetComponentInChildren<deckManager>();
 			MainBeControllerSCRIPT = GameObject.Find("MainBeController").GetComponentInChildren<MainBeController>();
 			cameraControllerSCRIPT = GameObject.Find("mainCamera").GetComponentInChildren<cameraController>();
+			diceControllerSCRIPT = GameObject.Find ("diceController").GetComponentInChildren<diceController>();
 
 			startCharacterSelectBtn = GameObject.Find ("startCharacterSelectBtn");
 
